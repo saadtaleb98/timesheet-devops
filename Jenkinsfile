@@ -12,5 +12,11 @@ pipeline {
                 sh 'mvn -version'
             }
         }
+        stage('mvn install') {
+            steps {
+                echo 'Running mvn install to build the project...'
+                sh 'mvn clean install -DSkipTests'
+            }
+        }
     }
 }
